@@ -1,0 +1,15 @@
+@hostname = localhost
+@port = 3333
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+
+### 
+# @name createUser
+POST  http://{{host}}/users
+Content-Type: application/json
+
+{
+    "name": "Herlander Bento",
+    "email": "herlanderbento19@gmail.com",
+    "password": "123456789"
+}
