@@ -16,9 +16,9 @@ export class CreateCategoryUseCase {
 
   async execute(input: CreateCategoryInput): Promise<CreateCategoryOutput> {
 
-    const userWithSameName = await this.categoryRepository.findByName(input.name)
+    const categoryWithSameName = await this.categoryRepository.findByName(input.name)
 
-    if (userWithSameName) {
+    if (categoryWithSameName) {
       throw new CategoryAlreadyExistsError()
     }
 

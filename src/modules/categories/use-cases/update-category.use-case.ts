@@ -22,8 +22,6 @@ export class UpdateCategoryUseCase {
       throw new CategoryNotFoundError()
     }
 
-
-
     if (input.name && category.name !== input.name) {
       const categoryWithSameName = await this.categoryRepository.findByName(
         input.name,

@@ -7,7 +7,7 @@ import {
 } from "../post-repositories.interface";
 
 export class PostPrismaRepository implements IPostRepository {
-  async insert(data: Prisma.PostCreateInput): Promise<Post> {
+  async insert(data: Prisma.PostUncheckedCreateInput): Promise<Post> {
     const model = await prisma.post.create({
       data,
     });

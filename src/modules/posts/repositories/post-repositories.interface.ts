@@ -8,7 +8,7 @@ export type PostPaginationInput = PaginationInput;
 export type PostPaginationOutput = PaginationOutput<Post>;
 
 export interface IPostRepository {
-  insert(data: Prisma.PostCreateInput): Promise<Post>;
+  insert(data: Prisma.PostUncheckedCreateInput): Promise<Post>;
   findById(id: string): Promise<Post | null>;
   findAll(params: PostPaginationInput): Promise<PostPaginationOutput>;
   update(data: Post): Promise<Post>;
