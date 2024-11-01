@@ -27,7 +27,7 @@ model User {
   created_at DateTime   @default(now())
   updated_at DateTime   @default(now())
   Post       Post[]
-  Commment   Commment[]
+  Comment   Comment[]
 
   @@map("users")
 }
@@ -56,12 +56,12 @@ model Post {
   category    Category   @relation(fields: [category_id], references: [id])
   created_at  DateTime   @default(now())
   updated_at  DateTime   @default(now())
-  Commment    Commment[]
+  Comment    Comment[]
 
   @@map("posts")
 }
 
-model Commment {
+model Comment {
   id         String   @id @default(uuid())
   description  String
   user_id    String
